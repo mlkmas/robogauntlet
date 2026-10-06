@@ -1,0 +1,20 @@
+{
+  "policy": {
+    "type": "mock",
+    "source": "mock://pick-place-v1",
+    "embodiment": "franka_panda",
+    "label": "Demo pick-and-place policy (mock)"
+  },
+  "observation": {
+    "cameras": ["front_rgb", "wrist_rgb"],
+    "resolution": [224, 224],
+    "state": ["joint_pos", "gripper_pos"]
+  },
+  "action": {"type": "joint_position", "chunk_size": 16, "control_hz": 30},
+  "task": {
+    "instruction": "Pick up the red mug and place it on the shelf",
+    "scene": "arena://kitchen_shelf_v1",
+    "success": "mug_on_shelf AND upright",
+    "timeout_s": 30
+  }
+}

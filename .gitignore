@@ -1,0 +1,6 @@
+__pycache__/
+*.egg-info/
+.env
+runs/
+nebius_volume/
+.pytest_cache/
